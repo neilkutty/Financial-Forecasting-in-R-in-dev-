@@ -1,0 +1,9 @@
+{
+    "path" : "~/project/fincast",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

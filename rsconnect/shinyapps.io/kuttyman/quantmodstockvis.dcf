@@ -1,0 +1,13 @@
+name: quantmodstockvis
+title: QuantmodStockVis
+username:
+account: kuttyman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 76190
+bundleId: 1234501
+url: https://kuttyman.shinyapps.io/QuantmodStockVis/
+when: 1519270716.9483
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|q.R|qmod.R|quandlExample.R
