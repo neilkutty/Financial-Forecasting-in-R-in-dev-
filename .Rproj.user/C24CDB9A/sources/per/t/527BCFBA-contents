@@ -5,13 +5,13 @@ library(dplyr)
 library(plotly)
 library(ggplot2)
 library(prophet)
-library(nnfor)
+#library(nnfor)
 
 x=Quandl('USTREASURY/REALYIELD', start_date='2018-04-11')
 symbols <- c('NKE','SPOT','TWTR', 'XOM', 'NVDA', 'TER', 'BAC')
 # AAPL_f = getFinancials('AAPL')
 getSymbols(Symbols = symbols, from = '2013-01-01', auto.assign = TRUE)
-getSymbols('BAC', from = '1990-01-01', auto.assign = TRUE)
+getSymbols('BAC', from = '2001-01-01', auto.assign = TRUE)
 getSymbols('NVDA', from = '1990-01-01', auto.assign = TRUE)
 
 #------------------------------------------------------------------------------------ /

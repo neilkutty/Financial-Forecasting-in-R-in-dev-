@@ -2,7 +2,7 @@
 ##  Quantmod Shiny Financial data app
 ##  authored by Neil Kutty
 ## 3/9/2018 -- Add a way to choose indicators and multiple charts :)
-## 7/8/2019 -- Incorporate prophet then LSTM
+## 7/8/2019 -- Incorporate prophet then LSTM 
 
 
 library(quantmod)
@@ -27,6 +27,25 @@ shinyServer(function(input, output) {
                to = input$dates[2],
                auto.assign = FALSE)
              }) 
+  
+#   
+#  # ------ BELOW IN DEV -----------__----------__----_---__---- 
+#   exprophet <- reactive({
+#     x = run_prophet(input$symb)
+#     m = x[[1]]
+#     forecast = x[[2]]
+#     dfs = x[[3]] 
+#     
+#     #basic plot
+#     prophplot = plot(m,forecast)
+#     
+#   })
+#   
+#   prophPlot <- renderPlot({
+#     plot()
+#   })
+# # ------ ABOVE IN DEV -----------__----------__----_---__----  
+#  
   
   output$plot <- renderPlot({
   
