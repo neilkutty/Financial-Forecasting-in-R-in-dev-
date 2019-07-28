@@ -27,6 +27,8 @@ run_prophet = function(symbol, from){
     the_list = list(m, forecast, dfs, symbol)
     return(the_list)
 }
+
+
 #------------------------------------------------------------------------------------ \
 # --- Run Prophet model on a stock and plot the forecast and actual
 x = run_prophet('NVDA', '2015-01-01')

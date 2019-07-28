@@ -8,12 +8,8 @@
 library(shiny)
 
 shinyUI(fluidPage(
-  titlePanel("Quantmod Stock Vis"),
-  helpText("Up to date price and indicator data for instruments through Quantmod presented in RShiny"),
-  helpText("OIL and UNEMP data provided through Quandl"),
-  
- 
-  
+  titlePanel("Quantmod Stock Chart and FBProphet Price Forecast"),
+  helpText("Not to be used for investment purposes."),
   
   fluidRow(
   
@@ -29,12 +25,15 @@ shinyUI(fluidPage(
             ),
       
       column(width=4, 
-             dateRangeInput("dates", 
+             dateRangeInput("dates",  
                             "Date range",
                             start = "2017-01-01", 
                             end = as.character(Sys.Date())),
              
              checkboxInput("log", "Plot y axis on log scale", 
+                           value = FALSE),
+             
+             checkboxInput("forecast", "Generate Forecast",
                            value = FALSE),
              
         
@@ -58,16 +57,29 @@ shinyUI(fluidPage(
              plotOutput("plot", height = "600px")
       )
      ),
+  
+  #plot output chart for forecast
+  #  fluidRow(
+  #   column(width=12,
+  #          h2(textOutput('text')),
+  #          plotOutput("fplot", height = "600px")
+  #   )  
+  #   
+  # ),
 
   fluidRow(
-         column(width=3,
-                plotOutput("oil", height = "300px")
-                ),
-         
-         column(width=3,
-                plotOutput("unemp", height= "300px")
-                )
+         # column(width=3,
+         #        plotOutput("oil", height = "300px")
+         #        ),
+         # 
+         # column(width=3,
+         #        plotOutput("unemp", height= "300px")
+         #        )
+    
+    column(width=12,
+           
+           plotOutput("plot2", height = "600px")
          
   )
       
-))
+)))

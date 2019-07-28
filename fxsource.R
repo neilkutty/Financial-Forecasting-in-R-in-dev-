@@ -1,6 +1,6 @@
 #Source
 
-
+library(prophet)
 
 
 run_prophet = function(symbol){
@@ -14,10 +14,3 @@ run_prophet = function(symbol){
     return(the_list)
 }
 
-
-m = x[[1]]
-forecast = x[[2]]
-dfs = x[[3]] 
-
-#basic plot
-prophplot = plot(m,forecast)
