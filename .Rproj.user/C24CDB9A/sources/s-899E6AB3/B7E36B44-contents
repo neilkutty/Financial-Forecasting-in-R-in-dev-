@@ -2,15 +2,16 @@
 ##
 ##  Quantmod Shiny Financial data app
 ##  authored by Neil Kutty
-##  original code: http://shiny.rstudio.com/tutorial/lesson6/
+##  original quantmod rshiny code: http://shiny.rstudio.com/tutorial/lesson6/
 
 
 library(shiny)
 
 shinyUI(fluidPage(
+  h2("Fincast"),
   titlePanel("Quantmod Stock Chart and FBProphet Price Forecast"),
-  helpText("Not to be used for investment purposes."),
-  
+  helpText("For research only.  Not to be used for investment purposes."),
+  tags$a(href="twitter.com/neilkutty", "author: neil kutty"),
   fluidRow(
   
       column(width=4,offset=.5,
@@ -57,24 +58,10 @@ shinyUI(fluidPage(
              plotOutput("plot", height = "600px")
       )
      ),
-  
-  #plot output chart for forecast
-  #  fluidRow(
-  #   column(width=12,
-  #          h2(textOutput('text')),
-  #          plotOutput("fplot", height = "600px")
-  #   )  
-  #   
-  # ),
+
 
   fluidRow(
-         # column(width=3,
-         #        plotOutput("oil", height = "300px")
-         #        ),
-         # 
-         # column(width=3,
-         #        plotOutput("unemp", height= "300px")
-         #        )
+
     
     column(width=12,
            

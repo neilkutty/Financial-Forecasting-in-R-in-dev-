@@ -1,0 +1,12 @@
+name: stockprophet
+title: stockprophet
+username:
+account: kuttyman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1055609
+bundleId: 2272343
+url: https://kuttyman.shinyapps.io/stockprophet/
+when: 1564359906.67059
+asMultiple: FALSE
+asStatic: FALSE

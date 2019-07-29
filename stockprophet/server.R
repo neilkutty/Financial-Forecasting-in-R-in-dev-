@@ -1,26 +1,52 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+##
+##  Quantmod Shiny Financial data app
+##  authored by Neil Kutty
+##  original quantmod rshiny code: http://shiny.rstudio.com/tutorial/lesson6/
 
-library(shiny)
 
-# Define server logic required to draw a histogram
+library(quantmod)
+library(ggplot2)
+library(prophet)
+library(shinycssloaders)
+
+
 shinyServer(function(input, output) {
+  
+  indicators <- list("addMACD()","addVo()","addBBands()")
+  
+  themeselect <- reactive({input$themeselection})
+  
+  dataInput <- reactive({ 
+    
+    getSymbols(input$symb, src = "yahoo", 
+               from = input$dates[1],
+               to = input$dates[2],
+               auto.assign = FALSE)
+  })
+  prophecy <- reactive({
+    
+    df <- data.frame(Date=as.POSIXct(index(dataInput())),coredata(dataInput())) 
+    dfs = df[,c(1,4)]
+    colnames(dfs) = c('ds','y')
+    m = prophet(dfs)
+    future = make_future_dataframe(m, periods = 720)
+    forecast <- predict(m, future)
+    the_list = list(m, forecast, dfs)
+  })
+  
 
-    output$distPlot <- renderPlot({
-
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
-
-    })
-
+  
+  output$plot <- renderPlot({
+  
+      chartSeries(dataInput(), name = input$symb, theme = input$themeselection, 
+              type = input$charttype, log.scale = input$log, TA = indicators)
+  })
+  
+  output$plot2 <- renderPlot({
+    m = prophecy()[[1]]
+    forecast = prophecy()[[2]]
+    plot(m,forecast)
+  })
+  
 })
+
