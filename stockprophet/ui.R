@@ -11,12 +11,13 @@ shinyUI(fluidPage(
 
   titlePanel("Quantmod Stock Chart and FBProphet Price Forecast"),
   helpText("For research only.  Not to be used for investment purposes."),
-  tags$a(href="twitter.com/neilkutty", "author: neil kutty"),
+  url <- a("author: Neil Kutty", href="https://www.twitter.com/neilkutty"),
+  
   fluidRow(
   
       column(width=4,offset=.5,
         
-        textInput("symb", "Symbol", "XLE"),
+        textInput("symb", "Symbol", "TWTR"),
        
         selectInput("themeselection", "Choose chart theme:",
                     choices = c('Black chart theme'='black',
@@ -28,7 +29,7 @@ shinyUI(fluidPage(
       column(width=4, 
              dateRangeInput("dates",  
                             "Date range",
-                            start = "2017-01-01", 
+                            start = "2018-01-01", 
                             end = as.character(Sys.Date())),
              
              checkboxInput("log", "Plot y axis on log scale", 

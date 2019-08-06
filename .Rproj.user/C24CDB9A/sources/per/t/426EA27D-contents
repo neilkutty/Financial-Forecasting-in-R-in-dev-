@@ -23,13 +23,16 @@ shinyServer(function(input, output) {
                to = input$dates[2],
                auto.assign = FALSE)
   })
-  prophecy <- reactive({
+ 
+  
+# prophecy function runs fb prophet model and returns list of objects   
+   prophecy <- reactive({
     
     df <- data.frame(Date=as.POSIXct(index(dataInput())),coredata(dataInput())) 
     dfs = df[,c(1,4)]
     colnames(dfs) = c('ds','y')
     m = prophet(dfs)
-    future = make_future_dataframe(m, periods = 720)
+    future = make_future_dataframe(m, periods = 360)
     forecast <- predict(m, future)
     the_list = list(m, forecast, dfs)
   })

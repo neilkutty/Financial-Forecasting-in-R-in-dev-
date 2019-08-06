@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4032798160",
+    "hash" : "4173938020",
     "id" : "7A662F1",
-    "lastKnownWriteTime" : 1564359784,
-    "last_content_update" : 1564359784705,
+    "lastKnownWriteTime" : 1565049086,
+    "last_content_update" : 1565049086525,
     "path" : "~/project/fincast/stockprophet/ui.R",
     "project_path" : "stockprophet/ui.R",
     "properties" : {
-        "cursorPosition" : "1,2",
+        "cursorPosition" : "22,56",
         "scrollLine" : "0",
-        "source_window_id" : ""
+        "source_window_id" : "wjb0k8ev68sre"
     },
     "read_only" : false,
     "read_only_alternatives" : [
