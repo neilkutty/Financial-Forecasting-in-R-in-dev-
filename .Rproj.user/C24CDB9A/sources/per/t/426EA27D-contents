@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
  
   
 # prophecy function runs fb prophet model and returns list of objects   
-   prophecy <- reactive({
+prophecy <- reactive({
     
     df <- data.frame(Date=as.POSIXct(index(dataInput())),coredata(dataInput())) 
     dfs = df[,c(1,4)]
@@ -43,6 +43,14 @@ shinyServer(function(input, output) {
   
       chartSeries(dataInput(), name = input$symb, theme = input$themeselection, 
               type = input$charttype, log.scale = input$log, TA = indicators)
+  })
+  
+  output$symb_name <- renderText({ 
+    paste("You have selected: ", input$symb)
+  })
+  
+  output$proph_label <- renderText({ 
+    paste("FB Prophet ", input$symb," price forecast next 360 days")
   })
   
   output$plot2 <- renderPlot({

@@ -35,7 +35,7 @@ shinyUI(fluidPage(
              checkboxInput("log", "Plot y axis on log scale", 
                            value = FALSE),
              
-             checkboxInput("forecast", "Generate Forecast",
+             checkboxInput("forecheck", "Generate Forecast",
                            value = FALSE),
              
         
@@ -55,7 +55,7 @@ shinyUI(fluidPage(
       
       
       column(width=12,
-             h2(textOutput('text')),
+             h3(textOutput('symb_name')),
              plotOutput("plot", height = "600px")
       )
      ),
@@ -63,9 +63,13 @@ shinyUI(fluidPage(
 
   fluidRow(
 
-    
+    br(),
+    br(),
+    hr(),
+    br(),
     column(width=12,
-           
+           tags$b((textOutput('proph_label'))),
+        
            plotOutput("plot2", height = "600px")
          
   )
