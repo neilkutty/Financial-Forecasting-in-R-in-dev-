@@ -32,7 +32,7 @@ prophecy <- reactive({
     dfs = df[,c(1,4)]
     colnames(dfs) = c('ds','y')
     m = prophet(dfs)
-    future = make_future_dataframe(m, periods = 360)
+    future = make_future_dataframe(m, periods = 180)
     forecast <- predict(m, future)
     the_list = list(m, forecast, dfs)
   })
@@ -46,11 +46,11 @@ prophecy <- reactive({
   })
   
   output$symb_name <- renderText({ 
-    paste("You have selected: ", input$symb)
+    paste("You have selected: ", toupper(input$symb))
   })
   
   output$proph_label <- renderText({ 
-    paste("FB Prophet ", input$symb," price forecast next 360 days")
+    paste("FB Prophet ", toupper(input$symb)," price forecast next 180 days")
   })
   
   output$plot2 <- renderPlot({

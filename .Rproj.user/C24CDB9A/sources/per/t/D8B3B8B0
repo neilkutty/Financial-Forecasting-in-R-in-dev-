@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1565399785935.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2063109837",
+    "id" : "D8B3B8B0",
+    "lastKnownWriteTime" : 1565582371,
+    "last_content_update" : 1565582371346,
+    "path" : "~/project/fincast/quantfin.R",
+    "project_path" : "quantfin.R",
+    "properties" : {
+        "cursorPosition" : "54,0",
+        "scrollLine" : "28",
+        "source_window_id" : "w4kry6up6th5j",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

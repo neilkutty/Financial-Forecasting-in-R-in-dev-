@@ -1,6 +1,10 @@
 {
-    "path" : "~/project/fincast/stockprophet",
+    "path" : "~/project/fincast",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : true,
             "columnIndex" : 2
