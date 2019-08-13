@@ -22,7 +22,7 @@ shinyServer(function(input, output) {
                from = input$dates[1],
                to = input$dates[2],
                auto.assign = FALSE)
-  })
+    })
  
   
 # prophecy function runs fb prophet model and returns list of objects   
@@ -57,6 +57,12 @@ prophecy <- reactive({
     m = prophecy()[[1]]
     forecast = prophecy()[[2]]
     plot(m,forecast)
+  })
+  
+  output$table1 <- renderTable({
+    t = getQuote(input$symb, what = yahooQF(c("Market Capitalization", "Earnings/Share", 
+                                          "P/E Ratio", "Book Value", "EBITDA", 
+                                          "Price/Book")))
   })
   
 })

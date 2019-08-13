@@ -36,9 +36,9 @@ shinyUI(fluidPage(
                             end = as.character(Sys.Date())),
              
              
-             # 
-             # checkboxInput("forecheck", "Generate Forecast",
-             #               value = FALSE),
+             
+              checkboxInput("forcheck", "Generate Forecast",
+                            value = FALSE),
              
              
              selectInput("charttype", "Choose chart type:",
@@ -70,7 +70,7 @@ shinyUI(fluidPage(
      ),
 
 
-  fluidRow(
+ fluidRow(
 
     br(),
     br(),
@@ -80,12 +80,28 @@ shinyUI(fluidPage(
            tags$b((textOutput('proph_label'))),
         
            plotOutput("plot2", height = "600px")
-           ),
-    tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
+           )
+  ),
+
+ 
+ 
+  fluidRow(
+   column(width=8,
+          tableOutput('table1')
+   )
+ ),
+
+ 
+ fluidRow(
+    column(width=12,
+    tags$code(' <.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
     br(),
-    url <- a("author: Neil Kutty", href="https://www.twitter.com/neilkutty"),
+    url <- a(" author: Neil Kutty", href="https://www.twitter.com/neilkutty"),
     br(),
     br()
-    
-    )))
+    )
+  )
+
+  
+))
 
