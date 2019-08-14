@@ -60,9 +60,15 @@ prophecy <- reactive({
   })
   
   output$table1 <- renderTable({
-    t = getQuote(input$symb, what = yahooQF(c("Market Capitalization", "Earnings/Share", 
-                                          "P/E Ratio", "Book Value", "EBITDA", 
-                                          "Price/Book")))
+    t = getQuote(input$symb, what = yahooQF(c("Symbol", "Name (Long)", "Last Trade (Price Only)",
+                                              "Earnings/Share",
+                                              "EPS Forward", "P/E Ratio", "Book Value", "EBITDA", 
+                                              "Price/Book", "Percent Change From 50-day Moving Average",
+                                              "Percent Change From 200-day Moving Average"))
+                 )
+    names(t)[3] = 'Name'
+    t = t[,-c(1)]
+    
   })
   
 })

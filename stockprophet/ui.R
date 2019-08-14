@@ -86,7 +86,7 @@ shinyUI(fluidPage(
  
  
   fluidRow(
-   column(width=8,
+   column(width=10,
           tableOutput('table1')
    )
  ),
