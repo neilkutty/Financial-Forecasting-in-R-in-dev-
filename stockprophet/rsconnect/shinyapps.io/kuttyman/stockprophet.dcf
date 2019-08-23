@@ -5,8 +5,8 @@ account: kuttyman
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1055609
-bundleId: 2316960
+bundleId: 2320616
 url: https://kuttyman.shinyapps.io/stockprophet/
-when: 1565742179.59665
+when: 1565827461.14761
 asMultiple: FALSE
 asStatic: FALSE

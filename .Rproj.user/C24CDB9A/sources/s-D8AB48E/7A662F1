@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "7A662F1",
-    "lastKnownWriteTime" : 1565741432,
-    "last_content_update" : 1565741432859,
+    "lastKnownWriteTime" : 1565906741,
+    "last_content_update" : 1565906741704,
     "path" : "~/project/fincast/stockprophet/ui.R",
     "project_path" : "stockprophet/ui.R",
     "properties" : {
-        "cursorPosition" : "76,9",
-        "scrollLine" : "76",
+        "cursorPosition" : "7,7",
+        "scrollLine" : "0",
         "source_window_id" : "wjb0k8ev68sre"
     },
     "read_only" : false,

@@ -8,12 +8,14 @@
 library(shiny)
 
 shinyUI(fluidPage(
-  tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
-  titlePanel("Stock Price Charting and FB Prophet Forecast"),
+  div(tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
+  titlePanel("Price Charting and FB Prophet Forecast for Stocks"),
   helpText("For research only.  Not to be used for investment purposes."),
+  div(tags$i(tags$b('BETA')), align="center") ,
+  br(),
   tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
-  br(),br(),
-  url <- a("author: Neil Kutty", href="https://www.twitter.com/neilkutty"),
+  br(),br(), align="center"),
+  
   
   fluidRow(
   
@@ -37,8 +39,8 @@ shinyUI(fluidPage(
              
              
              
-              checkboxInput("forcheck", "Generate Forecast",
-                            value = FALSE),
+             # checkboxInput("forcheck", "Generate Forecast",
+             #                value = FALSE),
              
              
              selectInput("charttype", "Choose chart type:",
@@ -93,11 +95,12 @@ shinyUI(fluidPage(
 
  
  fluidRow(
-    column(width=12,
+    column(width=12, align="center",
     tags$code(' <.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
     br(),
     url <- a(" author: Neil Kutty", href="https://www.twitter.com/neilkutty"),
     br(),
+    helpText('data provided by quantmod'),
     br()
     )
   )
