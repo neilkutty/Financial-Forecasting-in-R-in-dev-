@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576451387060.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2296505693",
+    "id" : "7552297E",
+    "lastKnownWriteTime" : 1576816721,
+    "last_content_update" : 1576816721582,
+    "path" : "~/project/fincast/q.R",
+    "project_path" : "q.R",
+    "properties" : {
+        "cursorPosition" : "21,20",
+        "scrollLine" : "9",
+        "source_window_id" : ""
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

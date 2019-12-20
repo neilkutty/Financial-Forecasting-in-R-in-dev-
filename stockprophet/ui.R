@@ -7,7 +7,7 @@
 
 library(shiny)
 
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme("united"),
   div(tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
   titlePanel("Price Charting and FB Prophet Forecast for Stocks"),
   helpText("For research only.  Not to be used for investment purposes."),
@@ -67,7 +67,7 @@ shinyUI(fluidPage(
   fluidRow(
         column(width=12,
              h3(textOutput('symb_name')),
-             plotOutput("plot", height = "600px")
+            withSpinner(plotOutput("plot", height = "600px"))
       )
      ),
 
@@ -81,7 +81,7 @@ shinyUI(fluidPage(
     column(width=12,
            tags$b((textOutput('proph_label'))),
         
-           plotOutput("plot2", height = "600px")
+           withSpinner(plotOutput("plot2", height = "600px"))
            )
   ),
 

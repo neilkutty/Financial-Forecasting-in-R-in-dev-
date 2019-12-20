@@ -58,3 +58,11 @@ AAPL_Qt = getQuote("AAPL", what = yahooQF(c("Market Capitalization", "Earnings/S
                                             "P/E Ratio", "Book Value", "EBITDA", 
                                             "Price/Book")))
 
+j = getQuote("AAPL", what = yahooQF(c("symbol", "Name (Long)", "Book Value")))
+
+# ___________________________________________________________________________________ #
+# !! BELOW doesn't work because "Last Trade (Price Only)" is not included %#%#% < < < #
+#AAPL_Qt = getQuote("AAPL", what = yahooQF(c("Symbol", "Name (Long)")))
+
+t = getQuote("AAPL", what = yahooQF(c("Symbol", "Name (Long)", "Last Trade (Price Only)"))
+)

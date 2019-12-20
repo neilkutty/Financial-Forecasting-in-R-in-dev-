@@ -8,6 +8,7 @@ library(quantmod)
 library(ggplot2)
 library(prophet)
 library(shinycssloaders)
+library(shinythemes)
 
 
 shinyServer(function(input, output) {
@@ -50,7 +51,10 @@ prophecy <- reactive({
   })
   
   output$proph_label <- renderText({ 
-    paste("FB Prophet ", toupper(input$symb)," price forecast next 180 days")
+    paste("FB Prophet price forecast for ", 
+          getQuote(input$symb, what = yahooQF(c("Symbol","Name (Long)", "Last Trade (Price Only)")))$NameLong,
+          "(",toupper(input$symb),")",
+          " over the next 180 days")
   })
   
   output$plot2 <- renderPlot({
