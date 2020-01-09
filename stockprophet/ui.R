@@ -6,6 +6,8 @@
 
 
 library(shiny)
+library(shinycssloaders)
+library(shinythemes)
 
 shinyUI(fluidPage(theme = shinytheme("united"),
   div(tags$code('<.<.<. -------------------------- currently under development -------------------------- .>.>.>'),
@@ -34,7 +36,7 @@ shinyUI(fluidPage(theme = shinytheme("united"),
       column(width=4,
              dateRangeInput("dates",  
                             "Date range",
-                            start = "2018-01-01", 
+                            start = as.character(Sys.Date()-200), 
                             end = as.character(Sys.Date())),
              
              

@@ -32,8 +32,10 @@ prophecy <- reactive({
     df <- data.frame(Date=as.POSIXct(index(dataInput())),coredata(dataInput())) 
     dfs = df[,c(1,4)]
     colnames(dfs) = c('ds','y')
+    
+    #Look into adding changepoint vector in prophet below
     m = prophet(dfs)
-    future = make_future_dataframe(m, periods = 180)
+    future = make_future_dataframe(m, periods = 30)
     forecast <- predict(m, future)
     the_list = list(m, forecast, dfs)
   })
