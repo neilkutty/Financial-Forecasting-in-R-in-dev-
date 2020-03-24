@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581206831158.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7AF268AC",
+    "lastKnownWriteTime" : 6875977888179634432,
+    "last_content_update" : 1581206831158,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7BCF1785",
+        "caption" : "stock_prices",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=stock_prices&cache_key=7BCF1785",
+        "displayedObservations" : 139,
+        "environment" : "",
+        "expression" : "stock_prices",
+        "object" : "stock_prices",
+        "preview" : 0,
+        "totalObservations" : 139,
+        "variables" : 6
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

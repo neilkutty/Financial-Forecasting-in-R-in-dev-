@@ -21,7 +21,7 @@ shinyUI(fluidPage(theme = shinytheme("united"),
   
   fluidRow(
   
-      column(width=3,
+      column(width=6,
         
         textInput("symb", "Symbol", "TWTR"),
         
@@ -33,7 +33,7 @@ shinyUI(fluidPage(theme = shinytheme("united"),
                     selected = 'black')
             ),
       
-      column(width=4,
+      column(width=6,
              dateRangeInput("dates",  
                             "Date range",
                             start = as.character(Sys.Date()-200), 
@@ -53,11 +53,7 @@ shinyUI(fluidPage(theme = shinytheme("united"),
                                      'Bar chart'='bars'),
                          selected='auto')
              
-             ),
-      
-      column(width=3,offset = -0.5,
-             checkboxInput("log", "Plot y axis on log scale",
-                           value = FALSE))
+             )
   ),
   
   fluidRow(
@@ -92,7 +88,15 @@ shinyUI(fluidPage(theme = shinytheme("united"),
   fluidRow(
    column(width=10,
           tableOutput('table1')
+   ),
+   
+   fluidRow(
+     column(width=12, plotOutput("plot3"))
    )
+   
+   # fluidRow(
+   #   column(width=4, textOutput("text1"))
+   # )
  ),
 
  

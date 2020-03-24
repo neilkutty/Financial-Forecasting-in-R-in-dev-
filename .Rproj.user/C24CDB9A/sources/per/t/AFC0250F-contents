@@ -44,7 +44,7 @@ prophecy <- reactive({
   output$plot <- renderPlot({
   
       chartSeries(dataInput(), name = input$symb, theme = input$themeselection, 
-              type = input$charttype, log.scale = input$log, TA = indicators)
+              type = input$charttype, TA = indicators)
   })
   
   output$symb_name <- renderText({ 
@@ -66,7 +66,7 @@ prophecy <- reactive({
   
   output$table1 <- renderTable({
     t = getQuote(input$symb, what = yahooQF(c("Symbol", "Name (Long)", "Last Trade (Price Only)",
-                                              "Earnings/Share",
+                                              "Market Capitalization","Earnings/Share",
                                               "EPS Forward", "P/E Ratio", "Book Value", "EBITDA", 
                                               "Price/Book", "Percent Change From 50-day Moving Average",
                                               "Percent Change From 200-day Moving Average"))
@@ -75,6 +75,20 @@ prophecy <- reactive({
     t = t[,-c(1)]
     
   })
+  
+  output$plot3 <- renderPlot({
+    plot(diff(log(dataInput()[,4]),lag=2), main = 'Log Returns')
+    # stock = diff(log(dataInput()[,4]),lag=1)
+    # stock = stock[!is.na(stock)]
+    # plot(stock,type='l', main='log returns plot')
+  })
+  # 
+  # output$text1 <- renderText({
+  #   fit = arima(diff(log(dataInput()[,4]),lag=2), order = c(2, 0, 2),include.mean=FALSE)
+  #   summary(fit)
+  #   
+  #   
+  # })
   
 })
 

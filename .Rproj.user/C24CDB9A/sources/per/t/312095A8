@@ -1,25 +1,25 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1564358136347.000,
+    "created" : 1578958898998.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2212165808",
-    "id" : "7A662F1",
-    "lastKnownWriteTime" : 1578608920,
-    "last_content_update" : 1578608920772,
+    "hash" : "612524992",
+    "id" : "312095A8",
+    "lastKnownWriteTime" : 1579052434,
+    "last_content_update" : 1579052434653,
     "path" : "~/project/fincast/stockprophet/ui.R",
     "project_path" : "stockprophet/ui.R",
     "properties" : {
-        "cursorPosition" : "9,20",
+        "cursorPosition" : "15,38",
         "scrollLine" : "0",
-        "source_window_id" : "wjb0k8ev68sre"
+        "source_window_id" : "wl5ra4eop0njf"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 1,
+    "relative_order" : 5,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
