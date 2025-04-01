@@ -28,7 +28,7 @@ library(xts)
 # 4.
 # 5.
 
-stock_prices = getSymbols('TWTR', from=as.character(Sys.Date()-200),
+stock_prices = getSymbols('NVDA', from=as.character(Sys.Date()-200),
                           to=as.character(Sys.Date()),
                           auto.assign = F)
 

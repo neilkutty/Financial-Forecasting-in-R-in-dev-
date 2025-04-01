@@ -1,25 +1,11 @@
 {
-    "sourceWindowGeometry" : {
-        "wl41rcfjgxppx" : {
-            "height" : 755,
-            "ordinal" : 31,
-            "width" : 1157,
-            "x" : 105,
-            "y" : 23
-        },
-        "wl5ra4eop0njf" : {
-            "height" : 689,
-            "ordinal" : 30,
-            "width" : 876,
-            "x" : 404,
-            "y" : 67
-        },
-        "wo73fhdkfnd9y" : {
-            "height" : 739,
-            "ordinal" : 29,
-            "width" : 885,
-            "x" : 13,
-            "y" : 23
+    "sourceWindowGeometry": {
+        "wvwhg4snw00fn": {
+            "ordinal": 36,
+            "x": 536,
+            "y": 25,
+            "width": 1038,
+            "height": 856
         }
     }
 }

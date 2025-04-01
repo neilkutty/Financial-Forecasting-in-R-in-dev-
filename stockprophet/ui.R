@@ -23,7 +23,7 @@ shinyUI(fluidPage(theme = shinytheme("united"),
   
       column(width=6,
         
-        textInput("symb", "Symbol", "TWTR"),
+        textInput("symb", "Symbol", "NVDA"),
         
        
         selectInput("themeselection", "Choose chart theme:",

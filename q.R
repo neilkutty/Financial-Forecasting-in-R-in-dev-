@@ -2,19 +2,12 @@ library(plotly)
 library(prophet)
 library(quantmod)
 
-
-
-
-
-
-
-
-
 # -------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 #  Get financial data OHLC format  #
-symbols <- c('TER','SPOT','TWTR', 'XOM','TSM','BAC')
+#symbols <- c('TER','SPOT','TWTR', 'XOM','TSM','BAC')
+symbols = c("NVDA")
 tariffs = c("TSN","GM","F","KO",'WHR',"AA","QCOM")
 
 getSymbols(Symbols = symbols, from = '2016-01-01', auto.assign = TRUE)
@@ -33,7 +26,7 @@ run_prophet = function(symbol){
 }
 
 # --- Run Prophet model on a stock and plot the forecast and actual
-x = run_prophet(TWTR)
+x = run_prophet(NVDA)
 
 m = x[[1]]
 forecast = x[[2]]
@@ -43,28 +36,6 @@ plot(m,forecast)
 ggplot(forecast, aes(x = ds, y=trend))+
     geom_line(stat = 'identity') +
     geom_point(data = dfs, aes(x = ds, y = y))
-
-#-------------------------------------------------------------
-# # # #     NON-FUNCTIONALIZED 
-#-------------------------------------------------------------
-# df <- data.frame(Date=as.POSIXct(index(TER)),coredata(TER)) 
-# dfs = df[,c(1,4)]
-# colnames(dfs) = c('ds','y   ')
-# m = prophet(dfs)
-# future = make_future_dataframe(m, periods = 365)
-# forecast <- predict(m, future)
-# tail(forecast[c('ds', 'yhat', 'yhat_lower', 'yhat_upper')])
-#--------------------------------------------------------------------------------------- |
-# myPars <- chart_pars()
-# myPars$mar <- c(3, 2, 0, .2) # default is c(3, 1, 0, 1)  # bottom, left, top, right
-# myPars$cex <- 1.5 #' Increase font size of both x and y axis scale ticks
-# mychartTheme <- chart_theme()
-# mychartTheme$
-# mychartTheme$rylab = FALSE  #' Don't show y-axis on right side of plot to save space
-# # mychartTheme$lylab = TRUE  #' Show y-axis ticks on left side of plot?  Default is TRUE for both left and right sides.
-# chart1 <- chart_Series(TWTR, pars=myPars)#,theme =  mychartTheme)
-# chart1
-
 
 
 #basic plot
@@ -93,19 +64,24 @@ fplot = ggplot(forecast, aes(x = ds, y=trend))+
 #make_plot(df)
 
 
-df %>%
-    plot_ly(x = ~Date, type="ohlc",
-            open = ~AAPL.Open, close = ~AAPL.Close,
-            high = ~AAPL.High, low = ~AAPL.Low) %>%
-    layout(title = "Basic OHLC Chart")
+#---------------- ********************************************---------------- *******
+#---------------- ********************************************---------------- *******
+## ---------------------------- PLOTLY OHLC ---------------- *************************
+#---------------- ********************************************---------------- *******
+#---------------- ********************************************---------------- *******
+#---------------- ********************************************---------------- *******
 
-p <- df %>%
-    plot_ly(x = ~Date, type="ohlc",
-            open = ~AAPL.Open, close = ~AAPL.Close,
-            high = ~AAPL.High, low = ~AAPL.Low) %>%
-    layout(title = "Basic OHLC Chart")
+df <- data.frame(Date=index(NVDA),coredata(NVDA))
+df <- tail(df, 90)
 
-p
+fig <- df %>% plot_ly(x = ~Date, type="ohlc",
+                      open = ~NVDA.Open, close = ~NVDA.Close,
+                      high = ~NVDA.High, low = ~NVDA.Low) 
+
+fig <- fig %>% layout(title = "Basic OHLC Chart")
+
+fig
+
 
 # Create a shareable link to your chart
 # Set up API credentials: https://plot.ly/r/getting-started
@@ -176,8 +152,6 @@ ns <- ls(all.names=T, envir=globalenv(), pattern = '[[:upper:]]')
 # - **************************************************************************
 # - **************************************************************************
 # - **************************************************************************
-
-
 
 chartSeries(NVDA, subset = 'last 3 months')
 addTA(OpCl(NVDA), type='b', lwd=2)
